@@ -206,25 +206,27 @@ The AWS Lambda Authorizer Trigger Function is designed to secure the Amazon API 
 
    Example: `cd /Users/UserName/Desktop/guidance-for-okta-phone-based-multi-factor-authentication-on-aws/deployment/Lambda-Authorizer`
 
-5. Run the following terminal command to download the latest Okta JWT Verifier Module.
+5. Run command: `npm init` to initialize the project.
+
+6. Run the following terminal command to download the latest Okta JWT Verifier Module.
 
    Run command: `npm i @okta/jwt-verifier` (node must be installed to run)
 
-6. Zip up `node_modules`, `index.js`, `package.json` and `package-lock.json` together located in `guidance-for-okta-phone-based-multi-factor-authentication-on-aws/deployment/Lambda-Authorizer` folder. Use the following Zip command on Mac/Linux.
+7. Zip up `node_modules`, `index.js`, `package.json` and `package-lock.json` together located in `guidance-for-okta-phone-based-multi-factor-authentication-on-aws/deployment/Lambda-Authorizer` folder. Use the following Zip command on Mac/Linux.
 
    Run command: `zip -r Verifer.zip *`
 
-7. Go back to the Lambda Console
+8. Go back to the Lambda Console
 
-8. Click on the **Code** tab.
+9. Click on the **Code** tab.
 
-9. Click on the **Upload From** drop down and select **Verifer.zip** file.
+10. Click on the **Upload From** drop down and select **Verifer.zip** file.
 
-10. Upload the **Verifer.zip** file created in step 6.
+11. Upload the **Verifer.zip** file created in step 7.
 
-11. Once Verifer.zip is uploaded, verify you see the `node_modules`, `index.js`, `package.json` and `package-lock.json` file inside the lambda directory. Remove any other files.
+12. Once Verifer.zip is uploaded, verify you see the `node_modules`, `index.js`, `package.json` and `package-lock.json` file inside the lambda directory. Remove any other files.
 
-12. Click the **Deploy** button if any files were removed. 
+13. Click the **Deploy** button if any files were removed. 
 
 <p align="center">
   <img src="assets/images/AuthFunctionCode.png" alt="Auth Lambda Function" width="1000"/>
@@ -340,6 +342,14 @@ This section provides a detailed guide on setting up and testing an OAuth 2.0 Te
 <p align="center">
   <img src="assets/images/Inlinehook.png" alt="Okta Inline Hook:" width="800"/>
 </p>
+
+5. **Add New Access Policy**
+   - In the Admin Console, go to **Security > API**.
+   - Click the name of your authorization server (e.g., default).
+   - Click **Access Policies** tab and click **Add New Access Policy**.
+   - Enter a name, description, assign to the app created in step 4 and click **Create Policy**.
+   - Click **Add rule**.
+   - Enter a name for **Rule Name** and click **Create rule**.
 
 ## Deployment Validation
 
